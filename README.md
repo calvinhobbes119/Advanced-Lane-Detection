@@ -86,3 +86,6 @@ Create a pipeline for image processing which performs the following steps:
     
     Wall time: 8min 44s
     
+## Discussion
+
+This algorithm does not perform well on the challenge videos. One improvement I am currently testing is to use the location of the detected lane lines in the current frames to determine the best perspective window for warping/unwarping in succeeding frame. Having a single perspective window position does not work well, and leads to missed or false detection of lane lines. This adaptive perspective window will allow us to detect the optimal perspective window position within each frame and track the perspective window position as the lanes curve sharply.
